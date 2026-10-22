@@ -11,6 +11,4 @@ int main(){
     scanf("%d",&num);
     printf("%d!=%d\n",num,factorial(num));
         return 0;
-
-
     }
