@@ -3,18 +3,15 @@ accountdetails=[]
 
 for n in range(number):
     emailid=input("enter the emailid:")
-    phoneno=int(input("enter the phone:"))#LIST
-    address=input("enter the address:")
     balance=int(input("enter the balance:"))
+    address=input("enter the address")
 
 
 
     name=input("enter the name:")
-    panno=int(input("enter the panno:"))
     accno=int(input("enter the accno:"))#TUPLE
-    dob=int(input("enter the dob:"))
-    mylist=[emailid,phoneno,address,balance]
-    mytuple=(name,panno,accno,dob,mylist)
+    mylist=[emailid,address,balance]
+    mytuple=(name,accno,mylist)
     print(mytuple)
     accountdetails.append(mytuple)
 print(accountdetails)
@@ -29,40 +26,37 @@ choice=int(input("enter the choice"))
 if choice==1:
     accno=int(input("enter the accno:"))
     for mytuple in accountdetails:
-        if accno==mytuple[2]:
+        if accno==mytuple[1]:
             print("---account found---\n")
             print("show list",mytuple)
             deposite=int(input("enter the deposite:\n"))
-            mytuple[4][3] = mytuple[4][3]+deposite
-            print("balance updated",mytuple[4][3])
+            mytuple[2][2] = mytuple[2][2]+deposite
+            print("balance updated",mytuple[2][2])
             break
     else:
         print("account  not found.....\n")
 elif choice==2:
     accno=int(input("enter the accno:"))
     for mytuple in accountdetails:
-        if accno==mytuple[2]:
+        if accno==mytuple[1]:
             print("---account found---\n")
             print("show list",mytuple)
             withdraw=int(input('enter the withdraw:\n'))
-            mytuple[4][3]=mytuple[4][3]-withdraw
-            print("balance updated",mytuple[4][3])
+            mytuple[2][2]=mytuple[2][2]-withdraw
+            print("balance updated",mytuple[2][2])
             break
     else:
         print("account not found...\n")
 elif choice==3:
     accno=int(input("enter the accno:"))
     for mytuple in accountdetails:
-        if accno==mytuple[2]:
+        if accno==mytuple[1]:
             print("---account found---\n")
-            print("name",mytuple[0])
-            print("panno",mytuple[1])
-            print("accno",mytuple[2])
-            print("dob",mytuple[3])
-            print("emailid",mytuple[4][0])
-            print("phoneno",mytuple[4][1])
-            print("address",mytuple[4][2])
-            print("balance",mytuple[4][3])
+            print("\tname",mytuple[0])
+            print("\taccno",mytuple[1])
+            print("\temailid",mytuple[2][0])
+            print("\tbalance",mytuple[2][1])
+            print("\taddress",mytuple[2][2])
             break
     else:
         print("account not found\n")    
