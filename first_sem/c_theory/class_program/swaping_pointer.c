@@ -13,8 +13,9 @@ int main(){
     *p1=*p2;
     *p2=num3;
     printf("after swapping:\n");
-    printf("num1: %d\n",num1);
-    printf("num2: %d\n",num2);
+    printf("%d num1\n",num1);
+    printf("%d num2\n",num2);
+    
     return 0;
 
 
