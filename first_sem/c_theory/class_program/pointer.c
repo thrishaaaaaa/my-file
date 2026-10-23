@@ -7,4 +7,3 @@ int main(){
     printf("%d\n",x);
     printf("%p\n",&x);
     printf("%p\n",p);
-}
