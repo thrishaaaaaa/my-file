@@ -34,21 +34,23 @@ int studenttotal(){//find total marks of three subject
 }
 int studentaverage(){
     for(int i=0;i<5;i++){
-        students[i].average=students[i].submark[0]+students[i].submark[1]+students[i].submark[2]/3;
+        students[i].average=students[i].total/3.0;
         }
 }
 void displaystudent(){
-for(int i=0;i<5;i++){  
-    printf("reg\t\name\t\submark\t\t\t:");
-    printf("total %2.f:",students[i].total);
-    printf("average:%2.f",students[i].average);
+    for (int i=0;i<5;i++){
+        printf("%s\t%d\t",students[i].name,students[i].reg);
+        for(int j=0;j<5;j++){  
+            printf("%d\t",students[i].submark[j]);
+        }
+        printf("total %2.f:",students[i].total);
+        printf("average:%2.f",students[i].average);
 }
 }
 int main(){
-    struct student students[5]; //array of sturcture --///acessing the variable inside respective main is called scoope of the variable
+     //array of sturcture --///acessing the variable inside respective main is called scoope of the variable
     studentdata();
     studenttotal();
     studentaverage(); 
     displaystudent();
-
 }
