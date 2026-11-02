@@ -1,23 +1,21 @@
 #include<stdio.h>
+void swap3(int *x,int*y,int*z){
+    int temp;
+    temp=*x;
+    *x=*z;
+    *z=*y;
+    *y=temp;
+}
 int main(){
-    int num1,num2,num3;
-    int *p1,*p2;
-
-    printf("enter the two numbers:");
-    scanf("%d %d",num1,num2);
-
-    p1=&num1;
-    p2=&num2;
-
-    num3=*p1;
-    *p1=*p2;
-    *p2=num3;
-    printf("after swapping:\n");
-    printf("%d num1\n",num1);
-    printf("%d num2\n",num2);
-    
+    int a,b,c;
+    printf("enter the number:");
+    scanf("%d%d%d",&a,&b,&c);
+    printf("before swaping:");
+    printf("a=%d b=%d c=%d\n",a,b,c);
+    swap3(&a,&b,&c);
+    printf("after swaping:");
+    printf("a=%d b=%d c=%d\n",a,b,c);
     return 0;
-
 
 
 }
